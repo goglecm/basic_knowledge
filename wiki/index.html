@@ -159,6 +159,8 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/katex</li>
 
+<li>$:/state/showeditpreview</li>
+
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab-2065006209</li>
@@ -182,6 +184,8 @@ Error message and password prompt
 <li>$:/view</li>
 
 <li>Diff between git commits</li>
+
+<li>List all changed files in a git commit</li>
 
 </ul>
 </p>
@@ -9578,6 +9582,9 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20191120141504226" modified="20191120141504226" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
 <div created="20191120110603380" modified="20191120112637739" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
@@ -9590,7 +9597,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191120124231742" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20191120112633853" list="[[Diff between git commits]]" modified="20191120124223406" title="$:/StoryList">
+<div created="20191120112633853" list="[[List all changed files in a git commit]] [[Diff between git commits]]" modified="20191120124223406" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9774,6 +9781,11 @@ Error message and password prompt
 
 `git diff oldCommit newCommit`
 </pre>
+</div>
+<div created="20191120141426227" modified="20191120141529728" tags="git" title="List all changed files in a git commit">
+<pre>To list all changed files in a commit:
+
+`git diff-tree --no-commit-id --name-only -r commit-id`</pre>
 </div>
 
 </div>
