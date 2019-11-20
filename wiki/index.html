@@ -191,6 +191,8 @@ Error message and password prompt
 
 <li>List all changed files in a git commit</li>
 
+<li>List git branches</li>
+
 <li>Merge a git branch onto another branch</li>
 
 <li>Move a set of git commits onto another branch</li>
@@ -9607,8 +9609,8 @@ Error message and password prompt
 <div created="20191120141504226" modified="20191120141504226" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20191120141750019" modified="20191120142929704" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20191120141750019" modified="20191120144258290" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20191120110603380" modified="20191120112637739" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
@@ -9622,7 +9624,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191120142613864" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20191120112633853" list="[[Merge a git branch onto another branch]] [[Move a set of git commits onto another branch]] [[Push up to a certain git commit from a local branch]] [[Revert a git file]] [[List all changed files in a git commit]] [[Diff between git commits]]" modified="20191120142607319" title="$:/StoryList">
+<div created="20191120112633853" list="[[List git branches]] [[Merge a git branch onto another branch]] [[Move a set of git commits onto another branch]] [[Push up to a certain git commit from a local branch]] [[Revert a git file]] [[List all changed files in a git commit]] [[Diff between git commits]]" modified="20191120142607319" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9812,18 +9814,25 @@ Error message and password prompt
 
 `git diff-tree --no-commit-id --name-only -r commit-id`</pre>
 </div>
-<div created="20191120142925822" modified="20191120143349199" tags="git" title="Merge a git branch onto another branch">
+<div created="20191120144338426" modified="20191120144452533" tags="git" title="List git branches">
+<pre>To list the local branches:
+
+`git branch`
+
+To list all remote branches:
+
+`git branch -r`</pre>
+</div>
+<div created="20191120142925822" modified="20191120144249411" tags="git" title="Merge a git branch onto another branch">
 <pre>Merge a branch (`newBranch`) into another branch (like `master`):
 
-`git checkout -b newbranch`
-
-`git add -A`
-
-`git commit -m &quot;Some commit message&quot;`
-
-`git checkout master`
-
-`git merge newbranch`
+```
+git checkout -b newbranch
+git add -A
+git commit -m &quot;Some commit message&quot;
+git checkout master
+git merge newbranch
+```
 
 This will create a merge commit on `master`.</pre>
 </div>
