@@ -159,13 +159,13 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
+<li>$:/plugins/hoelzro/progress-bar</li>
+
 <li>$:/plugins/tiddlywiki/katex</li>
 
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
-
-<li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab-1749438307</li>
 
@@ -187,25 +187,7 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize</li>
-
-<li>$:/themes/tiddlywiki/vanilla/metrics/fontsize</li>
-
-<li>$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint</li>
-
-<li>$:/themes/tiddlywiki/vanilla/metrics/storyright</li>
-
-<li>$:/themes/tiddlywiki/vanilla/metrics/storywidth</li>
-
-<li>$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth</li>
-
 <li>$:/view</li>
-
-<li>Clean the git stash</li>
-
-<li>Copy/paste from/to a tmux pane</li>
-
-<li>Delete git branches</li>
 
 <li>Diff between git commits</li>
 
@@ -217,11 +199,11 @@ Error message and password prompt
 
 <li>Move a set of git commits onto another branch</li>
 
-<li>Name a git stashed changeset</li>
-
 <li>Push up to a certain git commit from a local branch</li>
 
 <li>Revert a git file</li>
+
+<li>Untitled</li>
 
 </ul>
 </p>
@@ -9444,18 +9426,41 @@ Error message and password prompt
 <div created="20191120110607873" modified="20191120110611225" title="$:/GitHub/Username">
 <pre>goglecm</pre>
 </div>
-<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;Untitled&quot;: {
-            &quot;title&quot;: &quot;Untitled&quot;,
-            &quot;text&quot;: &quot;Move a set of commits onto another branch&quot;
-        }
-    }
-}</pre>
+<div status="complete" title="$:/Import">
+<pre>The following tiddlers were imported:
+
+# [[Untitled]]
+# [[$:/plugins/hoelzro/progress-bar]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div author="RobHoelz" core-version="&gt;=5.1.13" dependents="" description="Progress Bar Widget" list="readme license history" plugin-type="plugin" source="https://github.com/hoelzro/tw-progress-bar" title="$:/plugins/hoelzro/progress-bar" type="application/json" version="0.0.1">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/hoelzro/progress-bar/history&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/hoelzro/progress-bar/history&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;! Release History\n\n!! 0.0.1\n\nBasic progressbar widget.\n&quot;
+        },
+        &quot;$:/plugins/hoelzro/progress-bar/license&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/hoelzro/progress-bar/license&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;```\nCopyright 2017 Rob Hoelz\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \&quot;Software\&quot;), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\nof the Software, and to permit persons to whom the Software is furnished to do\nso, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \&quot;AS IS\&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n```\n&quot;
+        },
+        &quot;$:/plugins/hoelzro/progress-bar/progress-bar.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/hoelzro/progress-bar/progress-bar.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/hoelzro/progress-bar/progress-bar.js\ntype: application/javascript\nmodule-type: widget\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require('$:/core/modules/widgets/widget.js').widget;\n\nvar ProgressBarWidget = function ProgressBarWidget(parseTreeNode, options) {\n    this.initialise(parseTreeNode, options);\n};\n\nProgressBarWidget.prototype = new Widget();\n\nProgressBarWidget.prototype.render = function render(parent, nextSibling) {\n    this.parentDomNode = parent;\n    this.computeAttributes();\n    this.execute();\n\n    var node = this.document.createElement('div');\n    node.style.border = 'thin solid black';\n    var filledIn = this.document.createElement('div');\n    filledIn.style.height = '10px';\n    filledIn.style.backgroundColor = 'green';\n    filledIn.style.width = Math.round(100 * this.current / this.total) + '%';\n    node.appendChild(filledIn);\n    parent.insertBefore(node, nextSibling);\n    this.renderChildren(node, null);\n    this.domNodes.push(node);\n};\n\nProgressBarWidget.prototype.execute = function execute() {\n    this.current = this.getAttribute('current');\n    this.total = this.getAttribute('total');\n    this.makeChildWidgets();\n};\n\nProgressBarWidget.prototype.refresh = function refresh(changedTiddlers) {\n    var changedAttributes = this.computeAttributes();\n    if(changedAttributes.current || changedAttributes.total) {\n        this.refreshSelf();\n        return true;\n    }\n    return this.refreshChildren(changedTiddlers);\n};\n\nexports['hoelzro-progressbar'] = ProgressBarWidget;\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;widget&quot;
+        },
+        &quot;$:/plugins/hoelzro/progress-bar/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/hoelzro/progress-bar/readme&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;This plugin provides a simple progress bar widget.\n\n! Parameters\n\n* `current` - the current progress of the progressbar.\n* `total` - the total value that represents completion for this progressbar.\n\n! Example\n\n```\n&lt;$hoelzro-progressbar current={{!!current}} total={{!!total}} /&gt;\n```\n\n! Potential Future Enhancements\n\nThe coloration and size are currently hardcoded, and the progressbar\ndoesn't support animation.  Contributions adding these are most welcome!\n&quot;
+        }
+    }
+}</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="KaTeX: mathematical typography" library-version="v0.10.2" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/katex" type="application/json" version="5.1.21">
 <pre>{
@@ -9634,11 +9639,8 @@ Error message and password prompt
 <div created="20191120141750019" modified="20191120144258290" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20191122103131870" modified="20191122103131870" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
-</div>
-<div created="20191120110603380" modified="20191122103128582" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20191120110603380" modified="20191120112637739" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20191120110605493" modified="20191120110605493" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -9649,7 +9651,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191120142613864" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20191122103045526" list="[[Copy/paste from/to a tmux pane]] [[Name a git stashed changeset]] [[Clean the git stash]] [[Move a set of git commits onto another branch]] [[Merge a git branch onto another branch]] [[Push up to a certain git commit from a local branch]] [[Revert a git file]] [[List git branches]] [[List all changed files in a git commit]] [[Diff between git commits]] [[Delete git branches]]" modified="20191122103710322" title="$:/StoryList">
+<div list="$:/Import" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9825,70 +9827,21 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20191122103138835" modified="20191122103138835" title="$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize">
-<pre>19px</pre>
-</div>
-<div created="20191122103136741" modified="20191122103136741" title="$:/themes/tiddlywiki/vanilla/metrics/fontsize">
-<pre>18px</pre>
-</div>
-<div created="20191122103202140" modified="20191122103203603" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint">
-<pre>1150px</pre>
-</div>
-<div created="20191122103146125" modified="20191122103146744" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
-<pre>1100px</pre>
-</div>
-<div created="20191122103150660" modified="20191122103151281" title="$:/themes/tiddlywiki/vanilla/metrics/storywidth">
-<pre>1100px</pre>
-</div>
-<div created="20191122103153785" modified="20191122103154473" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
-<pre>1000px</pre>
-</div>
 <div created="20191120120813568" modified="20191120120831153" title="$:/view">
 <pre>classic</pre>
 </div>
-<div created="20191122103859498" modified="20191122103945666" tags="git-stash git" title="Clean the git stash">
-<pre>To wipe the stash:
-
-`git update-ref -d refs/stash`</pre>
-</div>
-<div created="20191122104142797" modified="20191122104512196" tags="tmux" title="Copy/paste from/to a tmux pane">
-<pre>First enter copy mode:
-
-`Ctrl+b {`
-
-The move to the start of the desired block to copy and enter selection mode:
-
-`Ctrl+Space`
-
-To to the end of the selection block and copy it:
-
-`Alt+w`
-
-Now paste it using:
-
-`Ctrl+b }`</pre>
-</div>
-<div created="20191122103427067" modified="20191122103549205" tags="git-branch git" title="Delete git branches">
-<pre>To delete a remote branch:
-
-`git push origin --delete branch_name`
-
-To delete a local branch:
-
-`git branch -D branch_name`</pre>
-</div>
-<div created="20191120123846045" modified="20191122103616321" tags="git-commit git" title="Diff between git commits">
+<div created="20191120123846045" modified="20191120124256900" tags="git" title="Diff between git commits">
 <pre>To diff 2 commits:
 
 `git diff oldCommit newCommit`
 </pre>
 </div>
-<div created="20191120141426227" modified="20191122103629795" tags="git-commit git" title="List all changed files in a git commit">
+<div created="20191120141426227" modified="20191120141529728" tags="git" title="List all changed files in a git commit">
 <pre>To list all changed files in a commit:
 
 `git diff-tree --no-commit-id --name-only -r commit-id`</pre>
 </div>
-<div created="20191120144338426" modified="20191122103638252" tags="git-branch git" title="List git branches">
+<div created="20191120144338426" modified="20191120144452533" tags="git" title="List git branches">
 <pre>To list the local branches:
 
 `git branch`
@@ -9897,7 +9850,7 @@ To list all remote branches:
 
 `git branch -r`</pre>
 </div>
-<div created="20191120142925822" modified="20191122103707433" tags="git-branch git" title="Merge a git branch onto another branch">
+<div created="20191120142925822" modified="20191120144249411" tags="git" title="Merge a git branch onto another branch">
 <pre>Merge a branch (`newBranch`) into another branch (like `master`):
 
 ```
@@ -9910,7 +9863,7 @@ git merge newbranch
 
 This will create a merge commit on `master`.</pre>
 </div>
-<div created="20191120142528421" modified="20191122103720195" tags="git-branch git" title="Move a set of git commits onto another branch">
+<div created="20191120142528421" modified="20191120144203163" tags="git" title="Move a set of git commits onto another branch">
 <pre>Move a set of commits onto another branch:
 
 ```
@@ -9918,11 +9871,6 @@ git branch newbranch
 git reset --hard a1b2c3d4
 git checkout newbranch
 ```</pre>
-</div>
-<div created="20191122103956781" modified="20191122104052388" tags="git-stash git" title="Name a git stashed changeset">
-<pre>Stash with name:
-
-`git stash save &quot;fixing this bug&quot;`</pre>
 </div>
 <div created="20191120141744589" modified="20191120142007233" tags="git" title="Push up to a certain git commit from a local branch">
 <pre>To push up to a certain commit (or push from a local branch to remote master):
@@ -9933,6 +9881,9 @@ git checkout newbranch
 <pre>To revert a file to HEAD:
 
 `git checkout -- filename`</pre>
+</div>
+<div title="Untitled">
+<pre>Move a set of commits onto another branch</pre>
 </div>
 
 </div>
