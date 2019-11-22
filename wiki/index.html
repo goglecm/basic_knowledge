@@ -215,6 +215,8 @@ Error message and password prompt
 
 <li>Move a set of git commits onto another branch</li>
 
+<li>Name a git stashed changeset</li>
+
 <li>Push up to a certain git commit from a local branch</li>
 
 <li>Revert a git file</li>
@@ -9645,7 +9647,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191120142613864" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20191122103045526" list="[[Clean the git stash]] [[Move a set of git commits onto another branch]] [[Merge a git branch onto another branch]] [[Push up to a certain git commit from a local branch]] [[Revert a git file]] [[List git branches]] [[List all changed files in a git commit]] [[Diff between git commits]] [[Delete git branches]]" modified="20191122103710322" title="$:/StoryList">
+<div created="20191122103045526" list="[[Name a git stashed changeset]] [[Clean the git stash]] [[Move a set of git commits onto another branch]] [[Merge a git branch onto another branch]] [[Push up to a certain git commit from a local branch]] [[Revert a git file]] [[List git branches]] [[List all changed files in a git commit]] [[Diff between git commits]] [[Delete git branches]]" modified="20191122103710322" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9897,6 +9899,11 @@ git branch newbranch
 git reset --hard a1b2c3d4
 git checkout newbranch
 ```</pre>
+</div>
+<div created="20191122103956781" modified="20191122104052388" tags="git-stash git" title="Name a git stashed changeset">
+<pre>Stash with name:
+
+`git stash save &quot;fixing this bug&quot;`</pre>
 </div>
 <div created="20191120141744589" modified="20191120142007233" tags="git" title="Push up to a certain git commit from a local branch">
 <pre>To push up to a certain commit (or push from a local branch to remote master):
