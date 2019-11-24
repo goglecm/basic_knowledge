@@ -161,6 +161,10 @@ Error message and password prompt
 
 <li>$:/plugins/hoelzro/full-text-search</li>
 
+<li>$:/plugins/hoelzro/full-text-search/auto-index</li>
+
+<li>$:/plugins/hoelzro/full-text-search/EnableFuzzySearching</li>
+
 <li>$:/plugins/hoelzro/progress-bar</li>
 
 <li>$:/plugins/tiddlywiki/katex</li>
@@ -168,6 +172,8 @@ Error message and password prompt
 <li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
+
+<li>$:/state/tab-1528275152</li>
 
 <li>$:/state/tab-1749438307</li>
 
@@ -178,6 +184,8 @@ Error message and password prompt
 <li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/StoryList</li>
+
+<li>$:/temp/FTS-state</li>
 
 <li>$:/temp/info-plugin</li>
 
@@ -9540,6 +9548,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20191124144950787" modified="20191124144950787" tags="$:/tags/StartupAction/Browser" title="$:/plugins/hoelzro/full-text-search/auto-index">
+<pre>&lt;$fts-action-generate-index /&gt;</pre>
+</div>
+<div created="20191124144957494" modified="20191124144957494" title="$:/plugins/hoelzro/full-text-search/EnableFuzzySearching">
+<pre>yes</pre>
+</div>
 <div author="RobHoelz" core-version="&gt;=5.1.13" dependents="" description="Progress Bar Widget" list="readme license history" plugin-type="plugin" source="https://github.com/hoelzro/tw-progress-bar" title="$:/plugins/hoelzro/progress-bar" type="application/json" version="0.0.1">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -9744,20 +9758,26 @@ Error message and password prompt
 <div created="20191120141750019" modified="20191120144258290" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20191120110603380" modified="20191120112637739" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20191124144927933" modified="20191124144927933" title="$:/state/tab-1528275152">
+<pre>$:/plugins/hoelzro/full-text-search/search-results</pre>
+</div>
+<div created="20191120110603380" modified="20191124145009152" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20191120110605493" modified="20191120110605493" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20191120112820187" modified="20191120112839231" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20191120112820187" modified="20191124144933118" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
 <div created="20191120112818516" modified="20191120142613864" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
-<div created="20191122112419265" list="$:/Import" modified="20191122112425185" title="$:/StoryList">
+<div created="20191124144935153" list="$:/plugins/hoelzro/full-text-search $:/ControlPanel GettingStarted" modified="20191124144941261" title="$:/StoryList">
 <pre></pre>
+</div>
+<div modified="20191124144957563" title="$:/temp/FTS-state" type="text/vnd.tiddlywiki">
+<pre>uninitialized</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -9772,7 +9792,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/il890891/Box/Work/Notes/index.html&quot;
+            &quot;text&quot;: &quot;file:///home/johnny/Downloads/index.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -9792,7 +9812,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/il890891/Box/Work/Notes/index.html&quot;
+            &quot;text&quot;: &quot;/home/johnny/Downloads/index.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -9804,7 +9824,7 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;3840&quot;
+            &quot;text&quot;: &quot;1920&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
@@ -9820,8 +9840,8 @@ Error message and password prompt
 <div created="20191120112423134" modified="20191120112424403" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>kate</pre>
 </div>
-<div created="20191120112753030" modified="20191120112807333" title="$:/temp/search">
-<pre></pre>
+<div created="20191120112753030" modified="20191124144926235" title="$:/temp/search">
+<pre>git</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.21">
 <pre>{
