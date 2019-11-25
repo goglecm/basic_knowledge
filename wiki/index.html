@@ -251,6 +251,8 @@ Error message and password prompt
 
 <li>Swap panes in tmux</li>
 
+<li>Undo redo in vim</li>
+
 <li>Vim modes</li>
 
 <li>Wipe git stash</li>
@@ -9821,7 +9823,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191125104517418" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Copy cut paste in vim]] [[Vim modes]] [[Load .bashrc at session start]] [[Delete next or previous word in bash]] [[Delete till end or beginning of a line in bash]] [[Start FZF]]" title="$:/StoryList">
+<div list="[[Undo redo in vim]] [[Copy cut paste in vim]] [[Vim modes]] [[Load .bashrc at session start]] [[Delete next or previous word in bash]] [[Delete till end or beginning of a line in bash]] [[Start FZF]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191125104119502" modified="20191125104444748" title="$:/temp/fts-feedback-2063668820" type="application/json">
@@ -10154,6 +10156,29 @@ git checkout newbranch
 <pre>To swap the current with the pane next to it:
 
 `Ctrl+b {`</pre>
+</div>
+<div created="20191125153953052" modified="20191125154711266" tags="vimrc vim" title="Undo redo in vim">
+<pre>!!! ''Undo redo''
+
+`u` - undo
+
+`Ctrl+r` - redo
+
+!!! ''Undo file''
+
+This will usually ony undo a single change. To enable the generation of the undo file, use this in `.vimrc`:
+
+`set undofile`
+
+This will create a `file.txt~` file with the undos.
+
+!!! ''Undo plugin''
+
+The `undotree` (https://github.com/mbbill/undotree) vim plugin allows a tree like navigation through the undo/redos:
+
+`:UndotreeShow`
+
+`:UndotreeHide`</pre>
 </div>
 <div created="20191125144532993" modified="20191125145056136" tags="vim" title="Vim modes">
 <pre>`i` - insert mode
