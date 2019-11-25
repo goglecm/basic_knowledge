@@ -219,6 +219,8 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>Close a vim window</li>
+
 <li>Copy cut paste in vim</li>
 
 <li>Copy paste selections from a tmux buffer</li>
@@ -9833,7 +9835,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191125104517418" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Navigate between vim window splits]] [[Indent in vim]] [[Resize split in vim]] [[Window split in vim]] [[Undo in bash command]] [[Undo redo in vim]] [[Copy cut paste in vim]] [[Vim modes]] [[Load .bashrc at session start]] [[Delete next or previous word in bash]] [[Delete till end or beginning of a line in bash]] [[Start FZF]]" title="$:/StoryList">
+<div list="[[Close a vim window]] [[Navigate between vim window splits]] [[Indent in vim]] [[Resize split in vim]] [[Window split in vim]] [[Undo in bash command]] [[Undo redo in vim]] [[Copy cut paste in vim]] [[Vim modes]] [[Load .bashrc at session start]] [[Delete next or previous word in bash]] [[Delete till end or beginning of a line in bash]] [[Start FZF]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191125104119502" modified="20191125173400909" title="$:/temp/fts-feedback-2063668820" type="application/json">
@@ -10039,6 +10041,13 @@ Error message and password prompt
 <div created="20191120120813568" modified="20191120120831153" title="$:/view">
 <pre>classic</pre>
 </div>
+<div created="20191125174311866" modified="20191125174405704" tags="vim" title="Close a vim window">
+<pre>`Ctrl+w c` - close window
+
+or
+
+`:q` in that window</pre>
+</div>
 <div created="20191125145705591" modified="20191125145917670" tags="vim" title="Copy cut paste in vim">
 <pre>`y` - yank
 
@@ -10099,7 +10108,7 @@ Delete local branch:
 `git diff oldCommit newCommit`
 </pre>
 </div>
-<div created="20191125173739603" modified="20191125173948641" tags="vim" title="Indent in vim">
+<div created="20191125173739603" modified="20191125174530285" tags="vim" title="Indent in vim">
 <pre>In ''insert ''mode:
 
 `TAB` - indent
@@ -10110,7 +10119,11 @@ In ''command ''mode:
 
 `5&gt;&gt;` - indent by 5
 
-`5&lt;&lt;` - unindent by 5</pre>
+`5&lt;&lt;` - unindent by 5
+
+`=` - automatically indent selection
+
+`==` - automatically indent line</pre>
 </div>
 <div created="20191120141426227" modified="20191120141529728" tags="git" title="List all changed files in a git commit">
 <pre>To list all changed files in a commit:
