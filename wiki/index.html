@@ -219,9 +219,9 @@ Error message and password prompt
 
 <li>$:/view</li>
 
-<li>Diff between git commits</li>
+<li>Delete a git branch</li>
 
-<li>Draft of 'New Tiddler'</li>
+<li>Diff between git commits</li>
 
 <li>List all changed files in a git commit</li>
 
@@ -9801,7 +9801,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191125104517418" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20191125104142288" list="[[List git branches]] [[Draft of 'New Tiddler']]" modified="20191125104612668" title="$:/StoryList">
+<div created="20191125104142288" list="[[Move a set of git commits onto another branch]] [[Merge a git branch onto another branch]] [[List git branches]] [[Delete a git branch]]" modified="20191125104637934" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191125104119502" modified="20191125104444748" title="$:/temp/fts-feedback-2063668820" type="application/json">
@@ -10007,14 +10007,20 @@ Error message and password prompt
 <div created="20191120120813568" modified="20191120120831153" title="$:/view">
 <pre>classic</pre>
 </div>
+<div created="20191125104500910" modified="20191125104803153" tags="git-branch git" title="Delete a git branch">
+<pre>Delete remote branch:
+
+`git push origin --delete branch_name`
+
+Delete local branch:
+
+`git branch -D branch_name`</pre>
+</div>
 <div created="20191120123846045" modified="20191120124256900" tags="git" title="Diff between git commits">
 <pre>To diff 2 commits:
 
 `git diff oldCommit newCommit`
 </pre>
-</div>
-<div created="20191125104500910" draft.of="New Tiddler" draft.title="Delete git branch" modified="20191125104609884" tags="git-branch git" title="Draft of 'New Tiddler'">
-<pre></pre>
 </div>
 <div created="20191120141426227" modified="20191120141529728" tags="git" title="List all changed files in a git commit">
 <pre>To list all changed files in a commit:
@@ -10030,7 +10036,7 @@ To list all remote branches:
 
 `git branch -r`</pre>
 </div>
-<div created="20191120142925822" modified="20191120144249411" tags="git" title="Merge a git branch onto another branch">
+<div created="20191120142925822" modified="20191125104632173" tags="git-branch git" title="Merge a git branch onto another branch">
 <pre>Merge a branch (`newBranch`) into another branch (like `master`):
 
 ```
@@ -10043,7 +10049,7 @@ git merge newbranch
 
 This will create a merge commit on `master`.</pre>
 </div>
-<div created="20191120142528421" modified="20191120144203163" tags="git" title="Move a set of git commits onto another branch">
+<div created="20191120142528421" modified="20191125104643199" tags="git-branch git" title="Move a set of git commits onto another branch">
 <pre>Move a set of commits onto another branch:
 
 ```
