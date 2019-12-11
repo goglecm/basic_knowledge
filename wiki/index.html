@@ -251,6 +251,8 @@ Error message and password prompt
 
 <li>Exclude results from grep</li>
 
+<li>Generate C tags</li>
+
 <li>Generate C++ ctags</li>
 
 <li>Grep directories recursively</li>
@@ -9877,7 +9879,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191128102823649" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Generate C++ ctags]] GettingStarted" title="$:/StoryList">
+<div list="[[Generate C tags]] [[Generate C++ ctags]] GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191125104119502" modified="20191128145420959" title="$:/temp/fts-feedback-2063668820" type="application/json">
@@ -10216,6 +10218,19 @@ To enable spell check permanently, put these in `.vimrc`:
 Example:
 
 `grep -v 'Hello'` - will exclude all lines containing `Hello`</pre>
+</div>
+<div created="20191211114759474" modified="20191211115127415" tags="C ctags" title="Generate C tags">
+<pre>Generate tags for C using unversal `ctags`:
+
+`ctags`
+
+`-DSOME_DEFINE`
+
+`--language-force=c`
+
+`--links=no`
+
+```cat files.list` ``</pre>
 </div>
 <div created="20191211114333194" modified="20191211114757562" tags="c++ ctags" title="Generate C++ ctags">
 <pre>Using universal `ctags`:
