@@ -245,6 +245,8 @@ Error message and password prompt
 
 <li>Delete till end or beginning of a line in bash</li>
 
+<li>Detach a tmux client from the current session</li>
+
 <li>Diff between git commits</li>
 
 <li>Enable vim spell check</li>
@@ -9885,7 +9887,7 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191212143113121" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="[[List all attached clients of a tmux session]]" title="$:/StoryList">
+<div list="[[Detach a tmux client from the current session]] [[List all attached clients of a tmux session]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191125104119502" modified="20191211120000773" title="$:/temp/fts-feedback-2063668820" type="application/json">
@@ -10204,6 +10206,15 @@ Delete local branch:
 <pre>`Ctrl+k` - delete till the end of the line
 
 `Ctrl+u` - delete till the beginning of the line</pre>
+</div>
+<div created="20191212143205115" modified="20191212143351659" tags="tmux" title="Detach a tmux client from the current session">
+<pre>Use `Ctrl+b :` then
+
+`detach-client -t /dev/pts/123`
+
+where `/dev/pts/123` is the client.
+
+See [[List all attached clients of a tmux session]]</pre>
 </div>
 <div created="20191120123846045" modified="20191120124256900" tags="git" title="Diff between git commits">
 <pre>To diff 2 commits:
