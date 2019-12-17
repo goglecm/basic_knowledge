@@ -229,6 +229,8 @@ Error message and password prompt
 
 <li>Case insensitive grep</li>
 
+<li>Cherry pick commit from another branch in git</li>
+
 <li>Close a vim window</li>
 
 <li>Compare working file in vim with git base or earlier file</li>
@@ -9887,13 +9889,13 @@ Error message and password prompt
 <div created="20191120112818516" modified="20191212143357340" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Detach a tmux client from the current session]] [[List all attached clients of a tmux session]]" title="$:/StoryList">
+<div list="[[Cherry pick commit from another branch in git]] GettingStarted" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191125104119502" modified="20191211120000773" title="$:/temp/fts-feedback-2063668820" type="application/json">
 <pre>[]</pre>
 </div>
-<div modified="20191212143108983" progressCurrent="49" progressTotal="49" progresscurrent="45" progresstotal="45" title="$:/temp/FTS-state" type="text/vnd.tiddlywiki">
+<div modified="20191217111947166" progressCurrent="51" progressTotal="51" progresscurrent="49" progresstotal="49" title="$:/temp/FTS-state" type="text/vnd.tiddlywiki">
 <pre>initialized</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -10127,6 +10129,23 @@ To go forward:
 </div>
 <div created="20191128114556227" modified="20191128114702083" tags="grep" title="Case insensitive grep">
 <pre>`-i` - the grep pattern is case insensitive</pre>
+</div>
+<div created="20191217111948882" modified="20191217112331591" tags="git-branch git" title="Cherry pick commit from another branch in git">
+<pre>Master:
+
+`(A) - (B) - (C) - (D)`
+
+Feature branch:
+
+`(A) - (B) - (R) - (P) - (Y)`
+
+To cherry pick `(P)` onto master:
+
+`git checkout master`
+
+`git cherry-pick (P)`
+
+This behaves just like a `git merge` so any conflicts need be resolved before the commit is done.</pre>
 </div>
 <div created="20191125174311866" modified="20191125174405704" tags="vim" title="Close a vim window">
 <pre>`Ctrl+w c` - close window
